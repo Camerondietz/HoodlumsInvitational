@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Annual Hoodlums Classic Invitational</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper.js Library 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    -->
+</head>
+<body class="bg-gray-100">
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-[url('media/hero.png')] bg-cover bg-center flex items-center">
+        <div class="w-full h-full bg-black bg-opacity-50 absolute top-0 left-0"></div>
+        <div class="relative z-10 text-center mx-auto text-white px-6">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-wide">
+                The Annual Hoodlums Classic Invitational
+            </h1>
+            <p class="text-lg md:text-xl mt-4">
+                Hosted at Prestigious Country Clubs Accross the Globe
+            </p>
+            <!--
+            <a href="#register" class="mt-6 inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-black text-lg font-semibold rounded-lg shadow-md">
+                Register Now
+            </a>
+            -->
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="py-12 bg-white text-center">
+        <h2 class="text-4xl font-semibold text-gray-800">Tournament Begins In</h2>
+        <div id="countdown" class="flex justify-center gap-6 text-2xl font-bold mt-6">
+            <div>
+                <span class="block text-4xl text-green-600" id="days">00</span> Days
+            </div>
+            <div>
+                <span class="block text-4xl text-green-600" id="hours">00</span> Hours
+            </div>
+            <div>
+                <span class="block text-4xl text-green-600" id="minutes">00</span> Minutes
+            </div>
+            <div>
+                <span class="block text-4xl text-green-600" id="seconds">00</span> Seconds
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="py-16 bg-gray-100 text-center">
+        <h2 class="text-4xl font-bold text-gray-900">Event Details</h2>
+        <p class="mt-4 text-lg text-gray-700">
+            Join us for a premier golf experience at the luxurious Greenview Country Club.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-8">
+            <div class="w-80 p-6 bg-white shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-green-700">Date & Time</h3>
+                <p class="text-gray-600 mt-2">July 24, 2025</p>
+            </div> <!--April 15, 2025 | 8:00 AM</p>-->
+            <div class="w-80 p-6 bg-white shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-green-700">Location</h3>
+                <p class="text-gray-600 mt-2">Colorado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Champion Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <!-- Champion Image -->
+            <div class="w-full md:w-1/2">
+                <img src="https://via.placeholder.com/400" alt="David, Grant, Cameron, Jack, Jett, Reed" class="w-full rounded-lg shadow-lg">
+            </div>
+
+            <!-- Funny Text -->
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h2 class="text-4xl font-bold text-green-700">Current Champions</h2>
+                <p class="text-lg text-gray-700 mt-4">
+                    Meet <span class="font-semibold text-gray-900">5 guys one hole</span> – 
+                    reigning champion and master of the greens.
+                    Can anyone dethrone these legends?
+                </p>
+                <p class="text-lg text-gray-700 mt-4"> 
+                      (Dirty) Myrtle Beach
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sponsors -->
+    <section class="py-12 bg-white text-center">
+        <h2 class="text-4xl font-bold text-gray-900">Our Sponsors</h2>
+        <div class="mt-6 flex justify-center gap-12">
+            <img src="media/dominoes.png" alt="Dominoes" class="h-20">
+            <img src="media/spacex.jpg" alt="SpaceX" class="h-20">
+            <img src="media/voodoo.webp" alt="Voodoo Ranger" class="h-20">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-white text-center">
+        <p>&copy; 2025 The Annual Hoodlums Classic Invitational. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Countdown Timer -->
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date("July 24, 2025 08:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
